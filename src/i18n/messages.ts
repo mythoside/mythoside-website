@@ -1,11 +1,6 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-import type { ReactNode, ElementType } from 'react'
+// Every line of copy, in English and Turkish. Keep both dictionaries in step: TR must cover every EN key.
 
-export type Lang = 'en' | 'tr'
-
-type Dict = Record<string, string>
-
-const EN: Dict = {
+export const EN = {
   'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Checks', 'nav.ethos': 'Your files', 'nav.open': 'Open&nbsp;source', 'nav.star': 'Star on GitHub',
   'hero.eyebrow': 'A world development environment for novelists',
   'hero.h1': 'Write the whole series in one place',
@@ -59,9 +54,11 @@ const EN: Dict = {
   'foot.repos': 'Repositories', 'foot.r1': 'mythoside-core · engine', 'foot.r2': 'mythoside-ts · app',
   'foot.project': 'Project', 'foot.pr1': 'Mythoside on GitHub', 'foot.pr2': 'Contributing', 'foot.pr3': 'Security',
   'foot.motto': 'The world is the source of truth.',
-}
+} as const satisfies Record<string, string>
 
-const TR: Dict = {
+export type MessageKey = keyof typeof EN
+
+export const TR: Record<MessageKey, string> = {
   'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Kontroller', 'nav.ethos': 'Dosyaların', 'nav.open': 'Açık&nbsp;kaynak', 'nav.star': "GitHub'da Yıldızla",
   'hero.eyebrow': 'Romancılar için bir dünya geliştirme ortamı',
   'hero.h1': 'Bütün seriyi tek bir yerde yaz',
@@ -117,52 +114,3 @@ const TR: Dict = {
   'foot.motto': 'Dünya, doğruluğun kaynağıdır.',
 }
 
-const DICTS: Record<Lang, Dict> = { en: EN, tr: TR }
-
-type LangCtx = { lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string }
-const Ctx = createContext<LangCtx>({ lang: 'en', setLang: () => {}, t: (k) => k })
-
-export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en')
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('mythos-lang')
-      if (saved === 'en' || saved === 'tr') setLangState(saved)
-    } catch { /* ignore */ }
-  }, [])
-
-  const setLang = (l: Lang) => {
-    setLangState(l)
-    document.documentElement.setAttribute('lang', l)
-    try { localStorage.setItem('mythos-lang', l) } catch { /* ignore */ }
-  }
-
-  const t = (key: string) => DICTS[lang][key] ?? key
-
-  return <Ctx.Provider value={{ lang, setLang, t }}>{children}</Ctx.Provider>
-}
-
-export function useLang() {
-  return useContext(Ctx)
-}
-
-/**
- * Render a translated string as HTML into the given element (keeps <em>/<b>/<br>).
- * Safe: `t()` only ever returns values from the static EN/TR dictionaries above —
- * compile-time constants authored here, never user input. No untrusted data reaches innerHTML.
- */
-export function T({ k, as: Tag = 'span', className }: { k: string; as?: ElementType; className?: string }) {
-  const { t } = useLang()
-  return <Tag className={className} dangerouslySetInnerHTML={{ __html: t(k) }} />
-}
-
-export function LangToggle() {
-  const { lang, setLang } = useLang()
-  return (
-    <div className="lang" role="group" aria-label="Language">
-      <button type="button" className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
-      <button type="button" className={lang === 'tr' ? 'active' : ''} onClick={() => setLang('tr')}>TR</button>
-    </div>
-  )
-}

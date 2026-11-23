@@ -1,5 +1,7 @@
-import { type ReactNode } from 'react'
-import { useInView } from '../../hooks/useInView'
+'use client'
+
+import type { ReactNode } from 'react'
+import { useInView } from '@/hooks/useInView'
 
 interface FadeInProps {
   children: ReactNode

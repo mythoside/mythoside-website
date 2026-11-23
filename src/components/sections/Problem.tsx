@@ -1,28 +1,41 @@
-import { FadeIn } from '../ui/FadeIn'
-import { T } from '../../i18n'
-import Icon from '../ui/Icon'
+import { IconName, SectionId } from '@/enums'
+import { T } from '@/i18n/T'
+import type { MessageKey } from '@/i18n/messages'
+import { IconRow } from '../ui/IconRow'
+import { SectionHead } from '../ui/SectionHead'
+import { SectionShell } from '../ui/SectionShell'
+
+interface StackTab {
+  icon: IconName
+  name?: string
+  nameKey?: MessageKey
+  note: MessageKey
+  bad?: boolean
+}
+
+// File names are literal; only the notes (and the last row's name, via nameKey) are translated.
+const TABS: readonly StackTab[] = [
+  { icon: IconName.Notebook, name: 'world-bible.notion', note: 'problem.n1' },
+  { icon: IconName.Sheet, name: 'timeline_v7_FINAL.xlsx', note: 'problem.n2' },
+  { icon: IconName.Folder, name: 'characters/ (41 docs)', note: 'problem.n3' },
+  { icon: IconName.X, nameKey: 'problem.mem', note: 'problem.n4', bad: true },
+]
 
 export default function Problem() {
   return (
-    <section className="section" id="problem">
-      <div className="wrap">
-        <FadeIn>
-          <div className="stack">
-            <div>
-              <div className="sec-head" style={{ marginBottom: 0 }}>
-                <T k="problem.h2" as="h2" />
-                <T k="problem.body" as="p" className="body" />
-              </div>
-            </div>
-            <div className="tabs" aria-hidden="true">
-              <div className="t"><span className="ic"><Icon name="notebook" /></span> world-bible.notion <T k="problem.n1" className="note" /></div>
-              <div className="t"><span className="ic"><Icon name="sheet" /></span> timeline_v7_FINAL.xlsx <T k="problem.n2" className="note" /></div>
-              <div className="t"><span className="ic"><Icon name="folder" /></span> characters/ (41 docs) <T k="problem.n3" className="note" /></div>
-              <div className="t bad"><span className="ic"><Icon name="x" /></span> <T k="problem.mem" /> <T k="problem.n4" className="note" /></div>
-            </div>
-          </div>
-        </FadeIn>
+    <SectionShell id={SectionId.Problem}>
+      <div className="stack">
+        <div>
+          <SectionHead title="problem.h2" body="problem.body" flush />
+        </div>
+        <div className="tabs" aria-hidden="true">
+          {TABS.map(({ icon, name, nameKey, note, bad }) => (
+            <IconRow key={note} icon={icon} iconClassName="ic" className={bad ? 't bad' : 't'}>
+              {nameKey ? <T k={nameKey} /> : name} <T k={note} className="note" />
+            </IconRow>
+          ))}
+        </div>
       </div>
-    </section>
+    </SectionShell>
   )
 }

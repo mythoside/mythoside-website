@@ -1,4 +1,8 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
+import { NodeKind } from '@/enums'
+import { useLang } from '@/i18n/LangProvider'
 import { EDGES, createNodes, fitView, neighbours, radiusOf, step } from './graphSim'
 import type { GraphNode } from './graphSim'
 
@@ -14,12 +18,16 @@ function cssVar(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
 }
 
+const KIND_COLOR: Record<NodeKind, string> = {
+  [NodeKind.Series]: '--text',
+  [NodeKind.Book]: '--text',
+  [NodeKind.Chapter]: '--muted',
+  [NodeKind.Character]: '--gold',
+  [NodeKind.Location]: '--starlight',
+}
+
 function nodeColor(node: GraphNode): string {
-  if (node.dead) return cssVar('--ember')
-  if (node.kind === 'character') return cssVar('--gold')
-  if (node.kind === 'location') return cssVar('--starlight')
-  if (node.kind === 'chapter') return cssVar('--muted')
-  return cssVar('--text')
+  return cssVar(node.dead ? '--ember' : KIND_COLOR[node.kind])
 }
 
 function drawGraph(ctx: CanvasRenderingContext2D, nodes: GraphNode[], view: View, size: Size, hover: GraphNode | null) {
@@ -47,7 +55,7 @@ function drawGraph(ctx: CanvasRenderingContext2D, nodes: GraphNode[], view: View
   }
   ctx.setLineDash([])
 
-  ctx.font = `500 ${12 / view.k}px Inter, sans-serif`
+  ctx.font = `500 ${12 / view.k}px ${cssVar('--sans')}`
   ctx.textAlign = 'center'
   ctx.textBaseline = 'top'
   for (const n of nodes) {
@@ -71,7 +79,8 @@ function drawGraph(ctx: CanvasRenderingContext2D, nodes: GraphNode[], view: View
   ctx.globalAlpha = 1
 }
 
-export default function ReferenceGraph({ label }: { label: string }) {
+export default function ReferenceGraph() {
+  const { t } = useLang()
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -241,5 +250,5 @@ export default function ReferenceGraph({ label }: { label: string }) {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="graph-canvas" role="img" aria-label={label} />
+  return <canvas ref={canvasRef} className="graph-canvas" role="img" aria-label={t('graph.aria')} />
 }

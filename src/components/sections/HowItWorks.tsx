@@ -1,5 +1,8 @@
-import { FadeIn } from '../ui/FadeIn'
-import { T, useLang } from '../../i18n'
+import { NodeKind, SectionId } from '@/enums'
+import { T } from '@/i18n/T'
+import type { MessageKey } from '@/i18n/messages'
+import { SectionHead } from '../ui/SectionHead'
+import { SectionShell } from '../ui/SectionShell'
 import ReferenceGraph from '../ui/ReferenceGraph'
 
 // Static English sample content (a worked example, not UI copy) — safe constant HTML.
@@ -17,37 +20,41 @@ const YAML = `<span class="d">---</span>
 When it fell, so did he — and the ash has</span>
 <span class="pr">carried his name ever since.</span>`
 
+interface LegendItem {
+  kind: NodeKind
+  label: MessageKey
+}
+
+// Series and books share one swatch; the CSS classes are `k-<kind>`.
+const LEGEND: readonly LegendItem[] = [
+  { kind: NodeKind.Book, label: 'graph.book' },
+  { kind: NodeKind.Chapter, label: 'graph.chapter' },
+  { kind: NodeKind.Character, label: 'graph.character' },
+  { kind: NodeKind.Location, label: 'graph.location' },
+]
+
 export default function HowItWorks() {
-  const { t } = useLang()
   return (
-    <section className="section" id="model">
-      <div className="wrap">
-        <FadeIn>
-          <div className="sec-head">
-            <T k="model.h2" as="h2" />
-            <T k="model.body" as="p" className="body" />
+    <SectionShell id={SectionId.Model}>
+      <SectionHead title="model.h2" body="model.body" />
+      <div className="model-grid">
+        <div className="panel">
+          <div className="head"><T k="model.p1" /> <span className="fp">characters/lord-corvath.md</span></div>
+          <pre className="yaml" dangerouslySetInnerHTML={{ __html: YAML }} />
+        </div>
+        <div className="panel">
+          <div className="head"><T k="model.p2" /> <T k="model.p2fp" className="fp" /></div>
+          <div className="constellation">
+            <ReferenceGraph />
           </div>
-          <div className="model-grid">
-            <div className="panel">
-              <div className="head"><T k="model.p1" /> <span className="fp">characters/lord-corvath.md</span></div>
-              <pre className="yaml" dangerouslySetInnerHTML={{ __html: YAML }} />
-            </div>
-            <div className="panel">
-              <div className="head"><T k="model.p2" /> <T k="model.p2fp" className="fp" /></div>
-              <div className="constellation">
-                <ReferenceGraph label={t('graph.aria')} />
-              </div>
-              <div className="graph-legend">
-                <span><i className="dot k-book" /><T k="graph.book" /></span>
-                <span><i className="dot k-chapter" /><T k="graph.chapter" /></span>
-                <span><i className="dot k-character" /><T k="graph.character" /></span>
-                <span><i className="dot k-location" /><T k="graph.location" /></span>
-                <T k="graph.hint" className="hint" />
-              </div>
-            </div>
+          <div className="graph-legend">
+            {LEGEND.map(({ kind, label }) => (
+              <span key={kind}><i className={`dot k-${kind}`} /><T k={label} /></span>
+            ))}
+            <T k="graph.hint" className="hint" />
           </div>
-        </FadeIn>
+        </div>
       </div>
-    </section>
+    </SectionShell>
   )
 }

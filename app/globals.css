@@ -2,9 +2,9 @@
 
 /* Tailwind v4 keeps generating a few utilities the codebase may reference. */
 @theme {
-  --font-display: 'Newsreader', ui-serif, Georgia, serif;
-  --font-serif: 'Newsreader', ui-serif, Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* ===== design tokens: the app's "Warm Nordic Editorial" desk (mythoside-ts/DESIGN.md).
@@ -51,9 +51,9 @@
 }
 
 :root{
-  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --serif:'Newsreader', ui-serif, Georgia, 'Times New Roman', serif;
-  --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono:var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --serif:var(--font-newsreader), ui-serif, Georgia, 'Times New Roman', serif;
+  --sans:var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}

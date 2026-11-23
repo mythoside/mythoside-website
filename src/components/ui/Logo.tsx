@@ -7,7 +7,11 @@ const WRITING = 'M214 248L388 262M186 298L406 320M162 348L326 370'
 const EDGES = 'M120 446L482 545M170 498L452 575'
 
 // Monochrome; inherits the brand colour via currentColor so it flips with the theme.
-export default function Logo({ className = 'mark' }: { className?: string }) {
+interface LogoProps {
+  className?: string
+}
+
+export default function Logo({ className = 'mark' }: LogoProps) {
   const maskId = `mythos-writing-${useId()}`
   return (
     <svg className={className} viewBox="-24 -10 600 600" fill="none" aria-hidden="true">

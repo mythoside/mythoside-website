@@ -1,6 +1,6 @@
 // A tiny force-directed layout for the reference graph (no d3: ~a dozen nodes).
 
-export type NodeKind = 'series' | 'book' | 'chapter' | 'character' | 'location'
+import { NodeKind } from '@/enums'
 
 export interface GraphNode {
   id: string
@@ -24,16 +24,16 @@ type Seed = Omit<GraphNode, 'x' | 'y' | 'vx' | 'vy'>
 
 // The worked example from the hero: Corvath dies in Book One, ch. 12, and is referenced again in Book Two, ch. 3.
 const SEEDS: Seed[] = [
-  { id: 'series', label: 'The Ashfall Cycle', kind: 'series' },
-  { id: 'b1', label: 'Embergate', kind: 'book' },
-  { id: 'b2', label: 'The Drowned Throne', kind: 'book' },
-  { id: 'c12', label: 'ch-12 The Fall', kind: 'chapter' },
-  { id: 'c01', label: 'ch-01 Saltlight', kind: 'chapter' },
-  { id: 'c03', label: 'ch-03 The Tidewatch', kind: 'chapter' },
-  { id: 'corvath', label: 'Lord Corvath', kind: 'character', dead: true },
-  { id: 'sera', label: 'Sera of Vael', kind: 'character' },
-  { id: 'tidewatch', label: 'The Tidewatch', kind: 'location' },
-  { id: 'keep', label: 'Embergate Keep', kind: 'location' },
+  { id: 'series', label: 'The Ashfall Cycle', kind: NodeKind.Series },
+  { id: 'b1', label: 'Embergate', kind: NodeKind.Book },
+  { id: 'b2', label: 'The Drowned Throne', kind: NodeKind.Book },
+  { id: 'c12', label: 'ch-12 The Fall', kind: NodeKind.Chapter },
+  { id: 'c01', label: 'ch-01 Saltlight', kind: NodeKind.Chapter },
+  { id: 'c03', label: 'ch-03 The Tidewatch', kind: NodeKind.Chapter },
+  { id: 'corvath', label: 'Lord Corvath', kind: NodeKind.Character, dead: true },
+  { id: 'sera', label: 'Sera of Vael', kind: NodeKind.Character },
+  { id: 'tidewatch', label: 'The Tidewatch', kind: NodeKind.Location },
+  { id: 'keep', label: 'Embergate Keep', kind: NodeKind.Location },
 ]
 
 export const EDGES: GraphEdge[] = [
@@ -60,7 +60,7 @@ export function createNodes(): GraphNode[] {
 }
 
 export function radiusOf(node: GraphNode): number {
-  return node.kind === 'series' ? 7 : node.kind === 'book' ? 6 : 4.5
+  return node.kind === NodeKind.Series ? 7 : node.kind === NodeKind.Book ? 6 : 4.5
 }
 
 const REPULSION = 9000

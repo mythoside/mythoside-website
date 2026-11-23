@@ -18,8 +18,9 @@ Seri yazmak için bir masaüstü uygulaması olan [Mythos](https://github.com/my
 git clone https://github.com/mythoside/mythoside-website.git
 cd mythoside-website
 npm install
-npm run dev     # http://localhost:5173
-npm run build   # dist/ içine üretim derlemesi
+npm run dev     # http://localhost:3000
+npm run build   # out/ içine statik çıktı
+npm run lint
 ```
 
 ## Teknolojiler
@@ -27,23 +28,26 @@ npm run build   # dist/ içine üretim derlemesi
 | Katman | Araç |
 | --- | --- |
 | Arayüz | React 19, TypeScript |
-| Derleme | Vite |
-| Stil | Tailwind CSS v4 ve `src/index.css` içindeki tasarım token'ları |
-| Yazı tipleri | Inter, Newsreader, JetBrains Mono |
+| Çatı | Next.js (App Router, statik çıktı) |
+| Stil | Tailwind CSS v4 ve `app/globals.css` içindeki tasarım token'ları |
+| Yazı tipleri | Inter, Newsreader, JetBrains Mono, `next/font` ile |
 | Barındırma | Firebase Hosting, GitHub Actions ile dağıtım |
 
 ## Klasör yapısı
 
 ```text
-src/index.css              tasarım token'ları, açık ve koyu tema
-src/i18n.tsx               sitedeki bütün metinler, İngilizce ve Türkçe
-src/theme.tsx              tema bağlamı ve geçiş düğmesi
-src/components/sections/   Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
-src/components/ui/         Logo, Icon, ReferenceGraph (canvas kuvvet grafiği), Button, Card, FadeIn
-public/                    favicon ve logo dosyaları
+app/layout.tsx            yazı tipleri, meta veriler, tema ve dil sağlayıcıları
+app/page.tsx              sayfa, bölüm bölüm
+app/globals.css           tasarım token'ları, açık ve koyu tema
+src/enums.ts              kapalı seçenek kümeleri: Lang, Theme, ButtonVariant, IconName, NodeKind, SectionId, RuleSeverity, TreeRowKind
+src/i18n/                 sitedeki bütün metinler, İngilizce ve Türkçe; sağlayıcı ve geçiş düğmesi
+src/theme/                tema sağlayıcısı ve geçiş düğmesi
+src/components/sections/  Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
+src/components/ui/        Logo, Icon, ReferenceGraph (canvas kuvvet grafiği), Button, Card, FadeIn, SectionShell
+public/                   favicon ve logo dosyaları
 ```
 
-Metni değiştirmek için `src/i18n.tsx` dosyasını düzenle; İngilizce ve Türkçe girdileri birlikte güncelle.
+Metni değiştirmek için `src/i18n/messages.ts` dosyasını düzenle; İngilizce ve Türkçe girdileri birlikte güncelle.
 
 ## Lisans
 

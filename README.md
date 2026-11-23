@@ -18,8 +18,9 @@ The product site for [Mythos](https://github.com/mythoside), a desktop app for w
 git clone https://github.com/mythoside/mythoside-website.git
 cd mythoside-website
 npm install
-npm run dev     # http://localhost:5173
-npm run build   # production build in dist/
+npm run dev     # http://localhost:3000
+npm run build   # static export in out/
+npm run lint
 ```
 
 ## Stack
@@ -27,23 +28,26 @@ npm run build   # production build in dist/
 | Layer | Tooling |
 | --- | --- |
 | UI | React 19, TypeScript |
-| Build | Vite |
-| Styling | Tailwind CSS v4 and the design tokens in `src/index.css` |
-| Fonts | Inter, Newsreader, JetBrains Mono |
+| Framework | Next.js (App Router, static export) |
+| Styling | Tailwind CSS v4 and the design tokens in `app/globals.css` |
+| Fonts | Inter, Newsreader, JetBrains Mono, via `next/font` |
 | Hosting | Firebase Hosting, deployed by GitHub Actions |
 
 ## Layout
 
 ```text
-src/index.css              design tokens, light and dark themes
-src/i18n.tsx               every line of copy, in English and Turkish
-src/theme.tsx              theme context and toggle
-src/components/sections/   Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
-src/components/ui/         Logo, Icon, ReferenceGraph (canvas force graph), Button, Card, FadeIn
-public/                    favicon and logo files
+app/layout.tsx            fonts, metadata, theme and language providers
+app/page.tsx              the page, section by section
+app/globals.css           design tokens, light and dark themes
+src/enums.ts              closed option sets: Lang, Theme, ButtonVariant, IconName, NodeKind, SectionId, RuleSeverity, TreeRowKind
+src/i18n/                 every line of copy, in English and Turkish, plus the provider and toggle
+src/theme/                theme provider and toggle
+src/components/sections/  Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
+src/components/ui/        Logo, Icon, ReferenceGraph (canvas force graph), Button, Card, FadeIn, SectionShell
+public/                   favicon and logo files
 ```
 
-To change copy, edit `src/i18n.tsx` and keep the English and Turkish entries in step.
+To change copy, edit `src/i18n/messages.ts` and keep the English and Turkish entries in step.
 
 ## License
 

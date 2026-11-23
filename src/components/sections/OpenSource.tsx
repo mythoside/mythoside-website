@@ -1,38 +1,23 @@
-import { FadeIn } from '../ui/FadeIn'
-import { T } from '../../i18n'
+import { SectionId } from '@/enums'
+import { T } from '@/i18n/T'
+import { Card } from '../ui/Card'
+import type { CardData } from '../ui/Card'
+import { SectionHead } from '../ui/SectionHead'
+import { SectionShell } from '../ui/SectionShell'
+
+const CARDS: readonly CardData[] = [
+  { tier: 'open.freeTier', price: 'open.freePrice', sub: 'open.freeSub', items: ['open.f1', 'open.f2', 'open.f3'] },
+  { tier: 'open.proTier', price: 'open.proPrice', sub: 'open.proSub', items: ['open.p1', 'open.p2', 'open.p3'], featured: true },
+]
 
 export default function OpenSource() {
   return (
-    <section className="section" id="open">
-      <div className="wrap">
-        <FadeIn>
-          <div className="sec-head">
-            <T k="open.h2" as="h2" />
-            <T k="open.body" as="p" className="body" />
-          </div>
-          <div className="os-grid">
-            <div className="card">
-              <T k="open.freeTier" className="tier" />
-              <div className="price"><T k="open.freePrice" /><T k="open.freeSub" as="small" /></div>
-              <ul>
-                <li><T k="open.f1" /></li>
-                <li><T k="open.f2" /></li>
-                <li><T k="open.f3" /></li>
-              </ul>
-            </div>
-            <div className="card pro">
-              <T k="open.proTier" className="tier" />
-              <div className="price"><T k="open.proPrice" /><T k="open.proSub" as="small" /></div>
-              <ul>
-                <li><T k="open.p1" /></li>
-                <li><T k="open.p2" /></li>
-                <li><T k="open.p3" /></li>
-              </ul>
-            </div>
-          </div>
-          <T k="open.fsl" as="div" className="fsl" />
-        </FadeIn>
+    <SectionShell id={SectionId.Open}>
+      <SectionHead title="open.h2" body="open.body" />
+      <div className="os-grid">
+        {CARDS.map((card) => <Card key={card.tier} {...card} />)}
       </div>
-    </section>
+      <T k="open.fsl" as="div" className="fsl" />
+    </SectionShell>
   )
 }
