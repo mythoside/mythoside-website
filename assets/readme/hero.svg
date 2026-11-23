@@ -1,34 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="t d">
-  <title id="t">Mythos Website — the product site</title>
-  <desc id="d">The landing site for Mythos, built with Vite, React 19, and Tailwind CSS v4, with English and Turkish content and light and dark themes.</desc>
-
-  <rect width="1200" height="360" rx="24" fill="#0B0E15"/>
-  <rect x="1" y="1" width="1198" height="358" rx="23" fill="none" stroke="#20242f"/>
-  <path d="M56 74H1144M56 286H1144" stroke="#1b2130"/>
-
-  <text x="56" y="50" fill="#C9A24B" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="3">THE PRODUCT SITE</text>
-  <text x="1144" y="50" text-anchor="end" fill="#7E869A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="2">MYTHOSIDE / WEBSITE</text>
-
-  <text x="56" y="150" fill="#E8DFCB" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="600">Mythos Website</text>
-  <text x="58" y="192" fill="#B9B4A4" font-family="Georgia, 'Times New Roman', serif" font-size="21">The landing page for the world</text>
-  <text x="58" y="220" fill="#B9B4A4" font-family="Georgia, 'Times New Roman', serif" font-size="21">development environment.</text>
-  <text x="58" y="262" fill="#8b93a3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5">VITE &#183; REACT 19 &#183; TAILWIND v4 &#183; EN / TR &#183; LIGHT + DARK</text>
-
-  <!-- browser chrome showing the landing hero -->
-  <g transform="translate(690 100)">
-    <rect x="0" y="0" width="406" height="168" rx="8" fill="#0E1220" stroke="#20242f"/>
-    <path d="M0 30H406" stroke="#1b2130"/>
-    <circle cx="16" cy="15" r="3.2" fill="#20242f"/><circle cx="28" cy="15" r="3.2" fill="#20242f"/><circle cx="40" cy="15" r="3.2" fill="#20242f"/>
-    <rect x="70" y="8" width="240" height="15" rx="7" fill="#0B0E15" stroke="#20242f"/>
-    <text x="82" y="19" fill="#7E869A" font-family="ui-monospace, monospace" font-size="9.5">mythoside.com</text>
-    <!-- theme + lang chips -->
-    <rect x="330" y="8" width="26" height="15" rx="3" fill="#C9A24B"/>
-    <text x="343" y="19" text-anchor="middle" fill="#141007" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700">EN</text>
-    <rect x="360" y="8" width="24" height="15" rx="3" fill="none" stroke="#20242f"/>
-    <text x="372" y="19" text-anchor="middle" fill="#7E869A" font-family="ui-monospace, monospace" font-size="8.5">TR</text>
-    <!-- landing content -->
-    <text x="24" y="74" fill="#C9A24B" font-family="ui-monospace, monospace" font-size="8.5" letter-spacing="1.5">LOCAL-FIRST WDE</text>
-    <text x="24" y="112" fill="#E8DFCB" font-family="Georgia, serif" font-size="30" font-weight="600">Continuity is a</text>
-    <text x="24" y="146" fill="#C9A24B" font-family="Georgia, serif" font-size="30" font-style="italic" font-weight="600">solved <tspan fill="#E8DFCB" font-style="normal">problem.</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="264" viewBox="0 0 1200 264" role="img" aria-labelledby="title desc">
+  <title id="title">mythoside.com, the Mythos product site</title>
+  <desc id="desc">The Mythos mark and the site&#x27;s name, mythoside.com, above a screenshot of the live page.</desc>
+  <defs>
+    <mask id="writing" maskUnits="userSpaceOnUse" x="-24" y="-10" width="600" height="600">
+      <rect x="-24" y="-10" width="600" height="600" fill="#fff"/>
+      <path d="M214 248L388 262M186 298L406 320M162 348L326 370" stroke="#000" stroke-width="20" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <rect width="1200" height="264" rx="24" fill="#F8F6F0"/>
+  <rect x="0.5" y="0.5" width="1199" height="263" rx="23.5" fill="none" stroke="#E5DFD4"/>
+<g transform="translate(64 56) scale(0.0667) translate(24 10)">
+    <polygon points="217,4 88,356 226,186 390,184 506,500 104,395 6,494 26,205 49,139" mask="url(#writing)" fill="#A35A3C" stroke="#A35A3C" stroke-width="28" stroke-linejoin="round"/>
+    <path d="M120 446L482 545M170 498L452 575" stroke="#A35A3C" stroke-width="22" stroke-linecap="round"/>
   </g>
+  <text x="116" y="85" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">mythoside / mythoside-website</text>
+  <text x="64" y="168" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-size="54" font-weight="500" fill="#2A2724" text-anchor="start">mythoside.com</text>
+  <text x="64" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="24" font-weight="400" fill="#55504A" text-anchor="start">The product site for Mythos, in English and Turkish</text>
+  <text x="1136" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="end">React 19 · Vite · Tailwind v4</text>
 </svg>
