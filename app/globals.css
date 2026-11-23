@@ -224,6 +224,14 @@ p.body{font-size:1.02rem;line-height:1.7;color:var(--text-dim);max-width:40rem;o
 .arch .box{display:inline-block;border:1px solid var(--line-2);border-radius:4px;padding:8px 12px;color:var(--text);margin:4px 0}
 .arch .box.core{border-color:var(--gold-dim);color:var(--gold)}
 .arch .pipe{color:var(--gold);letter-spacing:.1em}
+/* one line at every width: the row shrinks its type on phones instead of wrapping */
+.arch-row{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;white-space:nowrap;font-size:clamp(.6rem,2.3vw,.8rem)}
+.arch-row .box{margin:0;flex:none}
+/* the dashes are flexible lines, so the arrow gets shorter instead of pushing the row wider */
+.arch-row .pipe{display:flex;align-items:center;gap:4px;flex:0 1 15ch}
+.arch-row .pipe i{flex:1;min-width:6px;border-top:1px solid currentColor}
+@media (max-width:480px){.arch-row{gap:4px}.arch-row .pipe{letter-spacing:0}.arch-row .box{padding:6px 6px}}
+@media (max-width:340px){.arch-row{font-size:.5rem;gap:3px}.arch-row .box{padding:5px 4px}}
 .arch .no{color:var(--ember);text-decoration:line-through}
 .arch .cap{display:block;margin-top:16px;color:var(--faint);font-size:.72rem;line-height:1.7;letter-spacing:.02em}
 .checks{list-style:none;margin:0;padding:0}

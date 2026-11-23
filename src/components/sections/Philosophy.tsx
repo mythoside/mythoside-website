@@ -22,8 +22,12 @@ export default function Philosophy() {
           </div>
           <div className="arch" aria-label="Architecture: the core engine talks to the app over standard input and output, and never opens a network port.">
             <T k="arch.label" as="div" className="path" style={{ marginBottom: 16 }} />
-            <span className="box core">{'mythos‑core'}</span> <span className="pipe">◂── stdio ──▸</span> <span className="box">Mythos.app</span>
-            <br /><br />
+            <div className="arch-row">
+              <span className="box core">{'mythos‑core'}</span>
+              <span className="pipe" aria-label="stdio">◂<i />stdio<i />▸</span>
+              <span className="box">mythos.app</span>
+            </div>
+            <br />
             <span className="no">{'╳ 127.0.0.1:<port>'}</span>
             <T k="arch.cap" className="cap" />
           </div>
