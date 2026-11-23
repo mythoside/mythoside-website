@@ -9,11 +9,11 @@
 <p align="center"><a href="./README.md">English</a> · Türkçe</p>
 
 <p align="center">
-  <a href="https://github.com/Mythos-IDE">Ekosistem</a>
+  <a href="https://github.com/mythoside">Ekosistem</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Mythos-IDE/mythoside-core">Çekirdek motor</a>
+  <a href="https://github.com/mythoside/mythoside-core">Çekirdek motor</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Mythos-IDE/mythoside-ts">Masaüstü uygulaması</a>
+  <a href="https://github.com/mythoside/mythoside-ts">Masaüstü uygulaması</a>
 </p>
 
 **Mythos**'nin resmi tanıtım sayfası — romancılar için yerel-öncelikli dünya geliştirme ortamı. Ürün hikâyesini anlatır: tüm bir seriyi bir derleyicinin kod tabanını okuduğu gibi okumak, böylece süreklilik hataları bir okur bulmadan önce yüzeye çıkar.
@@ -33,7 +33,7 @@
 ## Yerelde Çalıştırma
 
 ```bash
-git clone https://github.com/Mythos-IDE/mythoside-website.git
+git clone https://github.com/mythoside/mythoside-website.git
 cd mythoside-website
 npm install
 npm run dev

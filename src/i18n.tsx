@@ -59,7 +59,7 @@ const EN: Dict = {
   'closing.cta2': 'Read the design docs →',
   'foot.tagline': '<b>A world development environment for novelists.</b> Early days, built in the open by a small team.',
   'foot.repos': 'Repositories', 'foot.r1': 'mythoside-core · engine', 'foot.r2': 'mythoside-ts · app',
-  'foot.project': 'Project', 'foot.pr1': 'Mythos-IDE on GitHub', 'foot.pr2': 'Contributing', 'foot.pr3': 'Security',
+  'foot.project': 'Project', 'foot.pr1': 'Mythoside on GitHub', 'foot.pr2': 'Contributing', 'foot.pr3': 'Security',
   'foot.motto': 'The world is the source of truth.',
 }
 
@@ -117,7 +117,7 @@ const TR: Dict = {
   'closing.cta2': 'Tasarım belgelerini oku →',
   'foot.tagline': '<b>Romancılar için bir dünya geliştirme ortamı.</b> Daha ilk günler; küçük bir ekip tarafından açıkça geliştiriliyor.',
   'foot.repos': 'Depolar', 'foot.r1': 'mythoside-core · motor', 'foot.r2': 'mythoside-ts · uygulama',
-  'foot.project': 'Proje', 'foot.pr1': "GitHub'da Mythos-IDE", 'foot.pr2': 'Katkıda bulunma', 'foot.pr3': 'Güvenlik',
+  'foot.project': 'Proje', 'foot.pr1': "GitHub'da Mythoside", 'foot.pr2': 'Katkıda bulunma', 'foot.pr3': 'Güvenlik',
   'foot.motto': 'Dünya, doğruluğun kaynağıdır.',
 }
 

@@ -7,7 +7,7 @@
   <path d="M56 74H1144M56 286H1144" stroke="#1b2130"/>
 
   <text x="56" y="50" fill="#C9A24B" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="3">THE PRODUCT SITE</text>
-  <text x="1144" y="50" text-anchor="end" fill="#7E869A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="2">MYTHOS-IDE / WEBSITE</text>
+  <text x="1144" y="50" text-anchor="end" fill="#7E869A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="2">MYTHOSIDE / WEBSITE</text>
 
   <text x="56" y="150" fill="#E8DFCB" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="600">Mythos Website</text>
   <text x="58" y="192" fill="#B9B4A4" font-family="Georgia, 'Times New Roman', serif" font-size="21">The landing page for the world</text>

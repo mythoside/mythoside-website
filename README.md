@@ -9,11 +9,11 @@
 <p align="center">English · <a href="./README.TR.md">Türkçe</a></p>
 
 <p align="center">
-  <a href="https://github.com/Mythos-IDE">Ecosystem</a>
+  <a href="https://github.com/mythoside">Ecosystem</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Mythos-IDE/mythoside-core">Core engine</a>
+  <a href="https://github.com/mythoside/mythoside-core">Core engine</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Mythos-IDE/mythoside-ts">Desktop app</a>
+  <a href="https://github.com/mythoside/mythoside-ts">Desktop app</a>
 </p>
 
 The official landing page for **Mythos** — the local-first world development environment for novelists. It tells the product story: reading a whole series the way a compiler reads a codebase, so continuity errors surface before a reader finds them.
@@ -33,7 +33,7 @@ Built as a single-page React app with the same editorial identity as the product
 ## Run locally
 
 ```bash
-git clone https://github.com/Mythos-IDE/mythoside-website.git
+git clone https://github.com/mythoside/mythoside-website.git
 cd mythoside-website
 npm install
 npm run dev

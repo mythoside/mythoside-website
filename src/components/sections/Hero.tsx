@@ -10,7 +10,7 @@ export default function Hero() {
           <T k="hero.h1" as="h1" />
           <T k="hero.lead" as="p" className="lead" />
           <div className="hero-cta">
-            <a className="btn btn-primary" href="https://github.com/Mythos-IDE"><span className="star">★</span> <T k="nav.star" /></a>
+            <a className="btn btn-primary" href="https://github.com/mythoside"><span className="star">★</span> <T k="nav.star" /></a>
             <a className="btn" href="#engine"><T k="hero.cta2" /></a>
           </div>
           <div className="hero-meta">

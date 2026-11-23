@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="nav-tools">
           <LangToggle />
           <ThemeToggle />
-          <a className="btn" href="https://github.com/Mythos-IDE"><span className="star">★</span> <T k="nav.star" className="lbl" /></a>
+          <a className="btn" href="https://github.com/mythoside"><span className="star">★</span> <T k="nav.star" className="lbl" /></a>
         </div>
       </div>
     </header>

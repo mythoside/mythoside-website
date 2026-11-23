@@ -12,19 +12,19 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <T k="foot.repos" as="h4" />
-            <a href="https://github.com/Mythos-IDE/mythoside-core"><T k="foot.r1" /></a>
-            <a href="https://github.com/Mythos-IDE/mythoside-ts"><T k="foot.r2" /></a>
-            <a href="https://github.com/Mythos-IDE/mythoside-website">mythoside-website</a>
+            <a href="https://github.com/mythoside/mythoside-core"><T k="foot.r1" /></a>
+            <a href="https://github.com/mythoside/mythoside-ts"><T k="foot.r2" /></a>
+            <a href="https://github.com/mythoside/mythoside-website">mythoside-website</a>
           </div>
           <div className="foot-col">
             <T k="foot.project" as="h4" />
-            <a href="https://github.com/Mythos-IDE"><T k="foot.pr1" /></a>
-            <a href="https://github.com/Mythos-IDE/.github/blob/main/CONTRIBUTING.md"><T k="foot.pr2" /></a>
-            <a href="https://github.com/Mythos-IDE/.github/blob/main/SECURITY.md"><T k="foot.pr3" /></a>
+            <a href="https://github.com/mythoside"><T k="foot.pr1" /></a>
+            <a href="https://github.com/mythoside/.github/blob/main/CONTRIBUTING.md"><T k="foot.pr2" /></a>
+            <a href="https://github.com/mythoside/.github/blob/main/SECURITY.md"><T k="foot.pr3" /></a>
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 Mythos-IDE — FSL-1.1 · site MIT</span>
+          <span>© 2026 Mythoside — FSL-1.1 · site MIT</span>
           <T k="foot.motto" />
         </div>
       </div>
