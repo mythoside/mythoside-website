@@ -17,7 +17,6 @@ export default function Features() {
       <div className="wrap">
         <FadeIn>
           <div className="sec-head">
-            <T k="engine.eyebrow" className="eyebrow" />
             <T k="engine.h2" as="h2" />
             <T k="engine.body" as="p" className="body" />
           </div>

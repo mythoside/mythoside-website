@@ -1,6 +1,7 @@
 import { T, LangToggle } from '../../i18n'
 import { ThemeToggle } from '../../theme'
 import Logo from '../ui/Logo'
+import Icon from '../ui/Icon'
 
 export default function Navbar() {
   return (
@@ -14,10 +15,11 @@ export default function Navbar() {
           <a href="#ethos"><T k="nav.ethos" /></a>
           <a href="#open"><T k="nav.open" /></a>
         </nav>
+        {/* Fixed-width toggles sit at the right edge, so a longer translated button grows leftwards and nothing under the cursor moves. */}
         <div className="nav-tools">
-          <LangToggle />
+          <a className="btn" href="https://github.com/mythoside"><Icon name="star" /> <T k="nav.star" className="lbl" /></a>
           <ThemeToggle />
-          <a className="btn" href="https://github.com/mythoside"><span className="star">★</span> <T k="nav.star" className="lbl" /></a>
+          <LangToggle />
         </div>
       </div>
     </header>

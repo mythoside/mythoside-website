@@ -1,4 +1,5 @@
 import { T, useLang } from '../../i18n'
+import Icon from '../ui/Icon'
 
 export default function Hero() {
   const { t } = useLang()
@@ -10,18 +11,14 @@ export default function Hero() {
           <T k="hero.h1" as="h1" />
           <T k="hero.lead" as="p" className="lead" />
           <div className="hero-cta">
-            <a className="btn btn-primary" href="https://github.com/mythoside"><span className="star">★</span> <T k="nav.star" /></a>
-            <a className="btn" href="#engine"><T k="hero.cta2" /></a>
-          </div>
-          <div className="hero-meta">
-            <div className="hm"><T k="hero.m1a" as="b" /><T k="hero.m1b" /></div>
-            <div className="hm"><T k="hero.m2a" as="b" /><T k="hero.m2b" /></div>
-            <div className="hm"><T k="hero.m3a" as="b" /><T k="hero.m3b" /></div>
+            <a className="btn btn-primary" href="https://github.com/mythoside"><Icon name="star" /> <T k="nav.star" /></a>
+            <a className="btn" href="#model"><T k="hero.cta2" /></a>
           </div>
         </div>
 
         {/* Signature: the narrative diagnostic. File paths/names stay literal; prose + diagnostic are translated. */}
-        <div className="editor" role="img" aria-label="The Mythos editor flags 'Lord Corvath', a character who died in Book One, being referenced as present in Book Two — diagnostic MYTH-E012.">
+        <figure className="hero-visual">
+        <div className="editor" role="img" aria-label="Preview of a planned Mythos continuity check: it flags Lord Corvath, a character who died in Book One, appearing in Book Two.">
           <div className="editor-bar">
             <span className="dot" />
             <span className="crumb">the-ashfall-cycle / book-02-the-drowned-throne / <b>ch-03-the-tidewatch.md</b></span>
@@ -50,7 +47,7 @@ export default function Hero() {
           <div className="problems">
             <div className="ph">{t('demo.problems')} <span className="c">{t('demo.err')}</span></div>
             <div className="diag">
-              <span className="sev" aria-hidden="true">✕</span>
+              <span className="sev"><Icon name="x" /></span>
               <div className="dcode">
                 <div className="rc">MYTH-E012 · {t('demo.rc')}</div>
                 <T k="demo.msg" as="div" className="msg" />
@@ -58,6 +55,14 @@ export default function Hero() {
               </div>
             </div>
           </div>
+        </div>
+        <T k="demo.cap" as="figcaption" className="demo-cap" />
+        </figure>
+
+        <div className="hero-meta">
+          <div className="hm"><T k="hero.m1a" as="b" /><T k="hero.m1b" /></div>
+          <div className="hm"><T k="hero.m2a" as="b" /><T k="hero.m2b" /></div>
+          <div className="hm"><T k="hero.m3a" as="b" /><T k="hero.m3b" /></div>
         </div>
       </div>
     </section>

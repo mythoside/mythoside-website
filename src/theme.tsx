@@ -4,10 +4,11 @@ import type { ReactNode } from 'react'
 export type Theme = 'light' | 'dark'
 
 type ThemeCtx = { theme: Theme; toggle: () => void }
-const Ctx = createContext<ThemeCtx>({ theme: 'dark', toggle: () => {} })
+const Ctx = createContext<ThemeCtx>({ theme: 'light', toggle: () => {} })
 
+// Light paper is the default; only an explicit system dark preference flips it.
 function systemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -32,7 +33,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     try { localStorage.setItem('mythos-theme', next) } catch { /* ignore */ }
   }
 
-  return <Ctx.Provider value={{ theme: theme ?? 'dark', toggle }}>{children}</Ctx.Provider>
+  return <Ctx.Provider value={{ theme: theme ?? 'light', toggle }}>{children}</Ctx.Provider>
 }
 
 export function useTheme() {

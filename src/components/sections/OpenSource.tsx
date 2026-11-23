@@ -7,7 +7,6 @@ export default function OpenSource() {
       <div className="wrap">
         <FadeIn>
           <div className="sec-head">
-            <T k="open.eyebrow" className="eyebrow" />
             <T k="open.h2" as="h2" />
             <T k="open.body" as="p" className="body" />
           </div>

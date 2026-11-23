@@ -1,5 +1,6 @@
 import { FadeIn } from '../ui/FadeIn'
-import { T } from '../../i18n'
+import { T, useLang } from '../../i18n'
+import ReferenceGraph from '../ui/ReferenceGraph'
 
 // Static English sample content (a worked example, not UI copy) — safe constant HTML.
 const YAML = `<span class="d">---</span>
@@ -17,36 +18,31 @@ When it fell, so did he — and the ash has</span>
 <span class="pr">carried his name ever since.</span>`
 
 export default function HowItWorks() {
+  const { t } = useLang()
   return (
     <section className="section" id="model">
       <div className="wrap">
         <FadeIn>
           <div className="sec-head">
-            <T k="model.eyebrow" className="eyebrow" />
             <T k="model.h2" as="h2" />
             <T k="model.body" as="p" className="body" />
           </div>
           <div className="model-grid">
             <div className="panel">
-              <div className="head">◇ <T k="model.p1" /> <span className="fp">characters/lord-corvath.md</span></div>
+              <div className="head"><T k="model.p1" /> <span className="fp">characters/lord-corvath.md</span></div>
               <pre className="yaml" dangerouslySetInnerHTML={{ __html: YAML }} />
             </div>
             <div className="panel">
-              <div className="head">◇ <T k="model.p2" /> <T k="model.p2fp" className="fp" /></div>
+              <div className="head"><T k="model.p2" /> <T k="model.p2fp" className="fp" /></div>
               <div className="constellation">
-                <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                  <path className="edge" d="M200,60 L96,150" />
-                  <path className="edge" d="M200,60 L310,140" />
-                  <path className="edge" d="M96,150 L150,255" />
-                  <path className="edge" d="M310,140 L150,255" />
-                  <path className="edge" d="M310,140 L300,250" />
-                  <path className="edge bad" d="M96,150 L300,250" />
-                </svg>
-                <div className="node" style={{ left: '50%', top: '19%' }}><span className="g" />The Ashfall Cycle <small>series</small></div>
-                <div className="node dead" style={{ left: '24%', top: '47%' }}><span className="g" />Lord Corvath <small>†&nbsp;B1·12</small></div>
-                <div className="node" style={{ left: '77.5%', top: '44%' }}><span className="g" />The Tidewatch</div>
-                <div className="node" style={{ left: '37.5%', top: '80%' }}><span className="g" />Sera of Vael</div>
-                <div className="node" style={{ left: '75%', top: '78%' }}><span className="g" />ch-03 <small>book 2</small></div>
+                <ReferenceGraph label={t('graph.aria')} />
+              </div>
+              <div className="graph-legend">
+                <span><i className="dot k-book" /><T k="graph.book" /></span>
+                <span><i className="dot k-chapter" /><T k="graph.chapter" /></span>
+                <span><i className="dot k-character" /><T k="graph.character" /></span>
+                <span><i className="dot k-location" /><T k="graph.location" /></span>
+                <T k="graph.hint" className="hint" />
               </div>
             </div>
           </div>
