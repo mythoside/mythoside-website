@@ -2,6 +2,7 @@ import { SectionId } from '@/enums'
 import { T } from '@/i18n/T'
 import type { MessageKey } from '@/i18n/messages'
 import { GITHUB_ORG, GITHUB_REPO } from '@/lib/links'
+import { ConsentSettingsButton } from '../ui/ConsentBanner'
 import Logo from '../ui/Logo'
 
 interface FooterLink {
@@ -53,7 +54,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="foot-bottom">
-          <span>© 2026 Mythoside — FSL-1.1 · site MIT</span>
+          <span>© 2026 Mythoside — FSL-1.1 · site MIT · <T k="foot.legal" /> · <ConsentSettingsButton /></span>
           <T k="foot.motto" />
         </div>
       </div>

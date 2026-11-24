@@ -11,5 +11,5 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'error',
     },
   },
-  globalIgnores(['.next/**', 'out/**', 'dist/**', 'next-env.d.ts']),
+  globalIgnores(['.next/**', 'out/**', 'dist/**', 'next-env.d.ts', 'functions/lib/**', 'functions/node_modules/**']),
 ])

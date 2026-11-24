@@ -13,6 +13,7 @@ const STATUS_MESSAGE: Partial<Record<WaitlistStatus, MessageKey>> = {
   [WaitlistStatus.Success]: 'wait.success',
   [WaitlistStatus.Duplicate]: 'wait.duplicate',
   [WaitlistStatus.Invalid]: 'wait.invalid',
+  [WaitlistStatus.NoConsent]: 'wait.noConsent',
   [WaitlistStatus.Error]: 'wait.error',
 }
 
@@ -27,8 +28,10 @@ export function WaitlistForm({ anchorId }: WaitlistFormProps) {
   const { lang, t } = useLang()
   const uid = useId()
   const inputId = `${uid}-email`
-  const noteId = `${uid}-note`
+  const statusId = `${uid}-status`
+  const consentId = `${uid}-consent`
   const [email, setEmail] = useState('')
+  const [consent, setConsent] = useState(false)
   const [status, setStatus] = useState<WaitlistStatus>(WaitlistStatus.Idle)
 
   const submitting = status === WaitlistStatus.Submitting
@@ -38,6 +41,10 @@ export function WaitlistForm({ anchorId }: WaitlistFormProps) {
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (submitting) return
+    if (!consent) {
+      setStatus(WaitlistStatus.NoConsent)
+      return
+    }
     setStatus(WaitlistStatus.Submitting)
     setStatus(await joinWaitlist(email, lang))
   }
@@ -59,20 +66,29 @@ export function WaitlistForm({ anchorId }: WaitlistFormProps) {
               placeholder={t('wait.placeholder')}
               value={email}
               aria-invalid={status === WaitlistStatus.Invalid}
-              aria-describedby={noteId}
+              aria-describedby={statusId}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button type="submit" className="btn btn-primary" disabled={submitting}>
               {t(submitting ? 'wait.submitting' : 'wait.submit')}
             </button>
           </div>
-          <p className="wl-note" id={noteId}>{t('wait.consent')}</p>
+          <div className="wl-consent">
+            <input
+              id={consentId}
+              type="checkbox"
+              checked={consent}
+              aria-invalid={status === WaitlistStatus.NoConsent}
+              aria-describedby={statusId}
+              onChange={(e) => setConsent(e.target.checked)}
+            />
+            <label htmlFor={consentId}>{t('wait.consent')} <T k="wait.privacy" className="wl-privacy-link" /></label>
+          </div>
         </form>
       )}
-      <div className="wl-status" role="status" aria-live="polite">
+      <div className="wl-status" id={statusId} role="status" aria-live="polite">
         {messageKey && <T k={messageKey} as="p" className={`wl-msg wl-${status}`} />}
       </div>
-      <T k="wait.privacy" as="p" className="wl-note wl-privacy" />
     </div>
   )
 }

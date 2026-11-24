@@ -9,6 +9,7 @@ interface TProps {
   as?: ElementType
   className?: string
   style?: CSSProperties
+  id?: string
 }
 
 /**
@@ -16,7 +17,7 @@ interface TProps {
  * Safe: `t()` only ever returns values from the static EN/TR dictionaries in messages.ts,
  * authored here and never user input. No untrusted data reaches innerHTML.
  */
-export function T({ k, as: Tag = 'span', className, style }: TProps) {
+export function T({ k, as: Tag = 'span', className, style, id }: TProps) {
   const { t } = useLang()
-  return <Tag className={className} style={style} dangerouslySetInnerHTML={{ __html: t(k) }} />
+  return <Tag id={id} className={className} style={style} dangerouslySetInnerHTML={{ __html: t(k) }} />
 }

@@ -4,8 +4,10 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Public waitlist: anyone may add one entry per email, and nobody can read, list, change or delete it.
     match /waitlist/{id} {
-      allow create: if request.resource.data.keys().hasOnly(['email', 'lang', 'createdAt', 'consent'])
-        && request.resource.data.keys().hasAll(['email', 'lang', 'createdAt', 'consent'])
+      allow create: if request.resource.data.keys().hasOnly(['email', 'lang', 'createdAt', 'consent', 'consentVersion'])
+        && request.resource.data.keys().hasAll(['email', 'lang', 'createdAt', 'consent', 'consentVersion'])
+        && request.resource.data.consentVersion is string
+        && request.resource.data.consentVersion.size() <= 32
         && request.resource.data.email is string
         && request.resource.data.email.size() <= 254
         && request.resource.data.email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$')

@@ -22,6 +22,7 @@ export enum IconName {
   Notebook = 'notebook',
   Sheet = 'sheet',
   Folder = 'folder',
+  ChevronLeft = 'chevronLeft',
 }
 
 // Kinds of node in the reference graph; the legend CSS classes are `k-<kind>`.
@@ -64,5 +65,12 @@ export enum WaitlistStatus {
   Success = 'success',
   Duplicate = 'duplicate',
   Invalid = 'invalid',
+  NoConsent = 'noConsent',
   Error = 'error',
+}
+
+// The legal pages; each has an EN and a TR route (see LEGAL_PATH in components/LegalPage.tsx).
+export enum LegalDocKind {
+  Privacy = 'privacy',
+  Terms = 'terms',
 }

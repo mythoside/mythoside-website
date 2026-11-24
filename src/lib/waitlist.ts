@@ -4,6 +4,7 @@ import { FIREBASE_CONFIG } from './firebaseConfig'
 // Keep in step with the email rule in firestore.rules.
 const EMAIL_PATTERN = /^[^@\s/]+@[^@\s/]+\.[^@\s/]+$/
 const MAX_EMAIL_LENGTH = 254
+const CONSENT_VERSION = '2026-11-24'
 
 const ENDPOINT = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/waitlist`
 
@@ -40,6 +41,8 @@ export async function joinWaitlist(rawEmail: string, lang: Lang): Promise<Waitli
     lang: { stringValue: lang },
     createdAt: { timestampValue: new Date().toISOString() },
     consent: { booleanValue: true },
+    // Which consent wording the visitor ticked; bump it whenever `wait.consent` or the privacy notice changes.
+    consentVersion: { stringValue: CONSENT_VERSION },
   }
   try {
     const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields }) })

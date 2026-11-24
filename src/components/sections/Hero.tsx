@@ -5,8 +5,6 @@ import { IconName, SectionId, TreeRowKind } from '@/enums'
 import { useLang } from '@/i18n/LangProvider'
 import { T } from '@/i18n/T'
 import type { MessageKey } from '@/i18n/messages'
-import { GITHUB_ORG } from '@/lib/links'
-import { ButtonLink } from '../ui/Button'
 import Icon from '../ui/Icon'
 import { WaitlistForm } from '../ui/WaitlistForm'
 
@@ -88,10 +86,6 @@ export default function Hero() {
           <T k="hero.lead" as="p" className="lead" />
           <p className="hero-status"><T k="hero.status" className="pill" /> <T k="hero.statusNote" /></p>
           <WaitlistForm anchorId={SectionId.Waitlist} />
-          <div className="hero-cta">
-            <ButtonLink href={GITHUB_ORG} icon={IconName.Star}><T k="nav.star" /></ButtonLink>
-            <ButtonLink href={`#${SectionId.Model}`}><T k="hero.cta2" /></ButtonLink>
-          </div>
         </div>
 
         {/* Signature: the narrative diagnostic. File paths/names stay literal; prose + diagnostic are translated. */}
