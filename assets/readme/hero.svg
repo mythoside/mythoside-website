@@ -1,20 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="264" viewBox="0 0 1200 264" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="396" viewBox="0 0 1200 396" role="img" aria-labelledby="title desc">
   <title id="title">mythoside.com, the Mythos product site</title>
-  <desc id="desc">The Mythos mark and the site&#x27;s name, mythoside.com, above a screenshot of the live page.</desc>
+  <desc id="desc">The Mythos shelf mark and the site&#x27;s name, mythoside.com, beside the six static pages the site exports: home, privacy notice and terms of use, each in English and Turkish.</desc>
   <defs>
     <mask id="writing" maskUnits="userSpaceOnUse" x="-24" y="-10" width="600" height="600">
       <rect x="-24" y="-10" width="600" height="600" fill="#fff"/>
       <path d="M214 248L388 262M186 298L406 320M162 348L326 370" stroke="#000" stroke-width="20" stroke-linecap="round"/>
     </mask>
   </defs>
-  <rect width="1200" height="264" rx="24" fill="#F8F6F0"/>
-  <rect x="0.5" y="0.5" width="1199" height="263" rx="23.5" fill="none" stroke="#E5DFD4"/>
-<g transform="translate(64 56) scale(0.0667) translate(24 10)">
-    <polygon points="217,4 88,356 226,186 390,184 506,500 104,395 6,494 26,205 49,139" mask="url(#writing)" fill="#A35A3C" stroke="#A35A3C" stroke-width="28" stroke-linejoin="round"/>
-    <path d="M120 446L482 545M170 498L452 575" stroke="#A35A3C" stroke-width="22" stroke-linecap="round"/>
+  <rect width="1200" height="396" rx="24" fill="#F8F6F0"/>
+  <rect x="0.5" y="0.5" width="1199" height="395" rx="23.5" fill="none" stroke="#E5DFD4"/>
+<g transform="translate(64 52) scale(0.0859)">
+    <mask id="bands" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="#fff"/><path d="M96 168H132M200 212H236M420 312V340M400 226V254" stroke="#000" stroke-width="16" stroke-linecap="round"/></mask>
+    <g fill="#A35A3C" mask="url(#bands)"><rect x="48" y="396" width="416" height="72" rx="20"/><rect x="72" y="104" width="84" height="268" rx="18"/><rect x="176" y="148" width="84" height="224" rx="18"/><rect x="280" y="290" width="184" height="82" rx="18"/><rect x="300" y="200" width="148" height="74" rx="18" transform="rotate(-6 300 274)"/></g>
   </g>
-  <text x="116" y="85" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">mythoside / mythoside-website</text>
-  <text x="64" y="168" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-size="54" font-weight="500" fill="#2A2724" text-anchor="start">mythoside.com</text>
-  <text x="64" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="24" font-weight="400" fill="#55504A" text-anchor="start">The product site for Mythos, in English and Turkish</text>
-  <text x="1136" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="end">Next.js · React 19 · Tailwind v4</text>
+  <text x="122" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">mythoside / mythoside-website</text>
+  <text x="64" y="178" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-size="56" font-weight="500" fill="#2A2724" text-anchor="start">mythoside.com</text>
+  <text x="64" y="228" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="22" font-weight="400" fill="#55504A" text-anchor="start">The Mythos product site, in English and Turkish.</text>
+  <text x="64" y="260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="22" font-weight="400" fill="#55504A" text-anchor="start">Analytics load only after a visitor says yes.</text>
+  <text x="64" y="340" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">Next.js static export · Firebase Hosting</text>
+  <rect x="612" y="40" width="548" height="316" rx="14" fill="#FFFFFF" stroke="#E5DFD4"/>
+  <text x="640" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#8A847B" text-anchor="start">out/</text>
+  <text x="640" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">├─</text>
+  <text x="674" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/</text>
+  <text x="956" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">EN</text>
+  <text x="992" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">home, waitlist</text>
+  <text x="640" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">├─</text>
+  <text x="674" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/tr</text>
+  <text x="956" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">TR</text>
+  <text x="992" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">ana sayfa</text>
+  <text x="640" y="210" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">├─</text>
+  <text x="674" y="210" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/privacy</text>
+  <text x="956" y="210" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">EN</text>
+  <text x="992" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">privacy notice</text>
+  <text x="640" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">├─</text>
+  <text x="674" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/tr/gizlilik</text>
+  <text x="956" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">TR</text>
+  <text x="992" y="252" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">aydınlatma metni</text>
+  <text x="640" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">├─</text>
+  <text x="674" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/terms</text>
+  <text x="956" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">EN</text>
+  <text x="992" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">terms of use</text>
+  <text x="640" y="336" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#E5DFD4" text-anchor="start">└─</text>
+  <text x="674" y="336" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="500" fill="#2A2724" text-anchor="start">/tr/kullanim-sartlari</text>
+  <text x="956" y="336" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="500" fill="#A35A3C" text-anchor="start">TR</text>
+  <text x="992" y="336" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">kullanım şartları</text>
 </svg>
