@@ -16,5 +16,5 @@
   <text x="116" y="85" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="start">mythoside / mythoside-website</text>
   <text x="64" y="168" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-size="54" font-weight="500" fill="#2A2724" text-anchor="start">mythoside.com</text>
   <text x="64" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="24" font-weight="400" fill="#55504A" text-anchor="start">The product site for Mythos, in English and Turkish</text>
-  <text x="1136" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="end">React 19 · Vite · Tailwind v4</text>
+  <text x="1136" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#8A847B" text-anchor="end">Next.js · React 19 · Tailwind v4</text>
 </svg>

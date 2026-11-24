@@ -1,7 +1,7 @@
 // Every line of copy, in English and Turkish. Keep both dictionaries in step: TR must cover every EN key.
 
 export const EN = {
-  'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Checks', 'nav.ethos': 'Your files', 'nav.open': 'Open&nbsp;source', 'nav.star': 'Star on GitHub',
+  'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Checks', 'nav.ethos': 'Your files', 'nav.open': 'Pricing', 'nav.star': 'Star on GitHub',
   'hero.eyebrow': 'A world development environment for novelists',
   'hero.h1': 'Write the whole series in one place',
   'hero.lead': 'Mythos is a desktop app for long fiction. Chapters, characters, places and the timeline sit side by side as plain Markdown files on your own disk. Next on the list: continuity checks that notice when someone who died in Book One speaks again in Book Two.',
@@ -59,7 +59,7 @@ export const EN = {
 export type MessageKey = keyof typeof EN
 
 export const TR: Record<MessageKey, string> = {
-  'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Kontroller', 'nav.ethos': 'Dosyaların', 'nav.open': 'Açık&nbsp;kaynak', 'nav.star': "GitHub'da Yıldızla",
+  'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Kontroller', 'nav.ethos': 'Dosyaların', 'nav.open': 'Fiyat', 'nav.star': "GitHub'da Yıldızla",
   'hero.eyebrow': 'Romancılar için bir dünya geliştirme ortamı',
   'hero.h1': 'Bütün seriyi tek bir yerde yaz',
   'hero.lead': "Mythos, uzun kurgu için bir masaüstü uygulaması. Bölümler, karakterler, mekânlar ve zaman çizelgesi kendi diskinde, yan yana düz Markdown dosyaları olarak durur. Sırada süreklilik kontrolleri var: Birinci Kitap'ta ölen biri İkinci Kitap'ta yeniden konuşursa bunu fark edecek.",
@@ -106,9 +106,9 @@ export const TR: Record<MessageKey, string> = {
   'open.proTier': 'Çıkışta', 'open.proPrice': 'Bir kez öde', 'open.proSub': 'bir yıllık güncelleme dahil',
   'open.p1': 'İmzalı, kurulmaya hazır masaüstü uygulaması', 'open.p2': 'İlk yılında çıkan her güncelleme', 'open.p3': 'Sonrasında sürümün çalışmaya devam eder, yenilemek isteğe bağlı',
   'open.fsl': "<b>Functional Source License 1.1.</b> Kaynak kodu açık; okuyabilir, derleyebilir ve kendin ücretsiz çalıştırabilirsin. Mythos'u rakip bir ürün olarak yeniden paketleyemezsin.<br>Her sürüm, çıkışından iki yıl sonra Apache&nbsp;2.0 olur. Web sitesi MIT lisanslı.",
-  'closing.h2': 'Mythos henüz 0 sürümünde ve açık kaynak olarak geliştiriliyor',
+  'closing.h2': 'Mythos henüz 0 sürümünde ve herkesin gözü önünde geliştiriliyor',
   'closing.cta2': 'Koda göz at',
-  'foot.tagline': '<b>Romancılar için bir dünya geliştirme ortamı.</b> Daha ilk günler, küçük bir ekip açık kaynak olarak geliştiriyor.',
+  'foot.tagline': '<b>Romancılar için bir dünya geliştirme ortamı.</b> Daha ilk günler, küçük bir ekip herkesin gözü önünde geliştiriyor.',
   'foot.repos': 'Depolar', 'foot.r1': 'mythoside-core · motor', 'foot.r2': 'mythoside-ts · uygulama',
   'foot.project': 'Proje', 'foot.pr1': "GitHub'da Mythoside", 'foot.pr2': 'Katkıda bulunma', 'foot.pr3': 'Güvenlik',
   'foot.motto': 'Dünya, doğruluğun kaynağıdır.',
