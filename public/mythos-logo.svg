@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-24 -10 600 600" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
   <defs>
-    <mask id="w" maskUnits="userSpaceOnUse" x="-24" y="-10" width="600" height="600">
-      <rect x="-24" y="-10" width="600" height="600" fill="#fff"/>
-      <path stroke="#000" stroke-width="20" stroke-linecap="round" d="M214 248L388 262M186 298L406 320M162 348L326 370"/>
+    <mask id="b" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <path stroke="#000" stroke-width="16" stroke-linecap="round" d="M96 168H132M200 212H236M420 312V340M400 226V254"/>
     </mask>
   </defs>
-  <g class="m" fill="#FEFEFE" stroke="#FEFEFE">
-    <polygon mask="url(#w)" stroke-width="28" stroke-linejoin="round" points="217,4 88,356 226,186 390,184 506,500 104,395 6,494 26,205 49,139"/>
-    <path fill="none" stroke-width="22" stroke-linecap="round" d="M120 446L482 545M170 498L452 575"/>
+  <g class="m" fill="#FEFEFE" mask="url(#b)">
+    <rect x="48" y="396" width="416" height="72" rx="20"/>
+    <rect x="72" y="104" width="84" height="268" rx="18"/>
+    <rect x="176" y="148" width="84" height="224" rx="18"/>
+    <rect x="280" y="290" width="184" height="82" rx="18"/>
+    <rect x="300" y="200" width="148" height="74" rx="18" transform="rotate(-6 300 274)"/>
   </g>
 </svg>
