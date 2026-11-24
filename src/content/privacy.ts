@@ -51,11 +51,7 @@ export const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: 'Who processes it, and where',
         paragraphs: [
-          'Your data is stored outside Türkiye, so joining the list involves a transfer of personal data abroad. It is handled for us by these providers, under our instructions:',
-        ],
-        list: [
-          'Google (Firebase: Cloud Firestore and Firebase Hosting), on servers in the European Union',
-          'Purelymail, in the United States, which delivers our emails',
+          'Your data is stored outside Türkiye, so joining the list involves a transfer of personal data abroad. It is handled for us, under our instructions, by Google (Firebase: Cloud Firestore and Firebase Hosting) on servers in the European Union. If we bring in another provider, for example to send emails, we will add it here before it receives any data.',
         ],
       },
       {
@@ -111,11 +107,7 @@ export const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: 'Verileri kim, nerede işliyor',
         paragraphs: [
-          'Veriler Türkiye dışında saklandığı için listeye katılmak kişisel verilerin yurt dışına aktarılması anlamına gelir. Veriler, bizim talimatımızla şu hizmet sağlayıcılar tarafından işlenir:',
-        ],
-        list: [
-          'Google (Firebase: Cloud Firestore ve Firebase Hosting), Avrupa Birliği’ndeki sunucularda',
-          'Purelymail, Amerika Birleşik Devletleri’nde; e-postalarımızı iletir',
+          'Veriler Türkiye dışında saklandığı için listeye katılmak kişisel verilerin yurt dışına aktarılması anlamına gelir. Veriler, bizim talimatımızla Google (Firebase: Cloud Firestore ve Firebase Hosting) tarafından Avrupa Birliği’ndeki sunucularda işlenir. E-posta göndermek gibi bir iş için başka bir hizmet sağlayıcıyla çalışırsak, ona veri aktarılmadan önce burada belirtiriz.',
         ],
       },
       {
