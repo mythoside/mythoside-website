@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Theme } from '@/enums'
+import { useLang } from '@/i18n/LangProvider'
 import { systemTheme, useTheme } from './ThemeProvider'
 
 const ICONS: Record<Theme, ReactNode> = {
@@ -17,6 +18,7 @@ const ICONS: Record<Theme, ReactNode> = {
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme()
+  const { t } = useLang()
   // Read the live attribute so the icon matches even when following the system preference.
   const [effective, setEffective] = useState<Theme>(Theme.Dark)
   useEffect(() => {
@@ -26,7 +28,7 @@ export function ThemeToggle() {
   }, [theme])
 
   return (
-    <button type="button" className="theme-toggle" aria-label="Toggle theme" onClick={toggle}>
+    <button type="button" className="theme-toggle" aria-label={t(effective === Theme.Dark ? 'a11y.themeToLight' : 'a11y.themeToDark')} onClick={toggle}>
       {/* The icon shows the theme you would switch to: a sun on light, a moon on dark. */}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         {ICONS[effective]}

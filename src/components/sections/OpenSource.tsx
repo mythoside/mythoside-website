@@ -17,6 +17,7 @@ export default function OpenSource() {
       <div className="os-grid">
         {CARDS.map((card) => <Card key={card.tier} {...card} />)}
       </div>
+      <T k="open.platforms" as="p" className="platforms" />
       <T k="open.fsl" as="div" className="fsl" />
     </SectionShell>
   )

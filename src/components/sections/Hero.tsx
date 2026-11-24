@@ -1,13 +1,14 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { ButtonVariant, IconName, SectionId, TreeRowKind } from '@/enums'
+import { IconName, SectionId, TreeRowKind } from '@/enums'
 import { useLang } from '@/i18n/LangProvider'
 import { T } from '@/i18n/T'
 import type { MessageKey } from '@/i18n/messages'
 import { GITHUB_ORG } from '@/lib/links'
 import { ButtonLink } from '../ui/Button'
 import Icon from '../ui/Icon'
+import { WaitlistForm } from '../ui/WaitlistForm'
 
 interface TreeRow {
   kind: TreeRowKind
@@ -85,8 +86,10 @@ export default function Hero() {
           <T k="hero.eyebrow" className="eyebrow" />
           <T k="hero.h1" as="h1" />
           <T k="hero.lead" as="p" className="lead" />
+          <p className="hero-status"><T k="hero.status" className="pill" /> <T k="hero.statusNote" /></p>
+          <WaitlistForm anchorId={SectionId.Waitlist} />
           <div className="hero-cta">
-            <ButtonLink href={GITHUB_ORG} variant={ButtonVariant.Primary} icon={IconName.Star}><T k="nav.star" /></ButtonLink>
+            <ButtonLink href={GITHUB_ORG} icon={IconName.Star}><T k="nav.star" /></ButtonLink>
             <ButtonLink href={`#${SectionId.Model}`}><T k="hero.cta2" /></ButtonLink>
           </div>
         </div>
@@ -105,12 +108,12 @@ export default function Hero() {
               </div>
               <div className="code">
                 {lines.map(({ n, content }) => (
-                  <div className="ln" key={n}><span className="n">{n}</span><span className="t prose-line">{content}</span></div>
+                  <div className="ln" key={n}><span className="n" aria-hidden="true">{n}</span><span className="t prose-line">{content}</span></div>
                 ))}
               </div>
             </div>
             <div className="problems">
-              <div className="ph">{t('demo.problems')} <span className="c">{t('demo.err')}</span></div>
+              <div className="ph">{t('demo.problems')} <span className="soon">{t('demo.soon')}</span> <span className="c">{t('demo.err')}</span></div>
               <div className="diag">
                 <span className="sev"><Icon name={IconName.X} /></span>
                 <div className="dcode">

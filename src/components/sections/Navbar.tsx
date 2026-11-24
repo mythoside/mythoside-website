@@ -1,11 +1,10 @@
-import { ButtonVariant, IconName, SectionId } from '@/enums'
+import { ButtonVariant, SectionId } from '@/enums'
 import { LangToggle } from '@/i18n/LangToggle'
 import { T } from '@/i18n/T'
 import type { MessageKey } from '@/i18n/messages'
 import { ThemeToggle } from '@/theme/ThemeToggle'
 import { ButtonLink } from '../ui/Button'
 import Logo from '../ui/Logo'
-import { GITHUB_ORG } from '@/lib/links'
 
 interface NavItem {
   id: SectionId
@@ -32,9 +31,7 @@ export default function Navbar() {
         </nav>
         {/* Fixed-width toggles sit at the right edge, so a longer translated button grows leftwards and nothing under the cursor moves. */}
         <div className="nav-tools">
-          <ButtonLink href={GITHUB_ORG} variant={ButtonVariant.Secondary} icon={IconName.Star}>
-            <T k="nav.star" className="lbl" />
-          </ButtonLink>
+          <ButtonLink href={`#${SectionId.Waitlist}`} variant={ButtonVariant.Primary}><T k="nav.waitlist" /></ButtonLink>
           <ThemeToggle />
           <LangToggle />
         </div>

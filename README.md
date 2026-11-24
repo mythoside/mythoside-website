@@ -36,15 +36,15 @@ npm run lint
 ## Layout
 
 ```text
-app/layout.tsx            fonts, metadata, theme and language providers
-app/page.tsx              the page, section by section
+app/(en)/, app/tr/       root layouts and pages for / and /tr (each ships its own <html lang>)
+firestore.rules           waitlist rules: create-only, validated
 app/globals.css           design tokens, light and dark themes
 src/enums.ts              closed option sets: Lang, Theme, ButtonVariant, IconName, NodeKind, SectionId, RuleSeverity, TreeRowKind
 src/i18n/                 every line of copy, in English and Turkish, plus the provider and toggle
 src/theme/                theme provider and toggle
 src/components/sections/  Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
 src/components/ui/        Logo, Icon, ReferenceGraph (canvas force graph), Button, Card, FadeIn, SectionShell
-public/                   favicon and logo files
+public/                   favicon, share image (og.png), robots.txt, sitemap.xml and logo files
 ```
 
 To change copy, edit `src/i18n/messages.ts` and keep the English and Turkish entries in step.

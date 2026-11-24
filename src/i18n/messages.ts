@@ -1,6 +1,25 @@
+import { Lang } from '@/enums'
+
 // Every line of copy, in English and Turkish. Keep both dictionaries in step: TR must cover every EN key.
 
 export const EN = {
+  'meta.title': 'Mythos, a world development environment for novelists',
+  'meta.description': 'Mythos is a desktop app for long fiction. Chapters, characters, places and the timeline sit side by side as plain Markdown files on your own disk.',
+  'meta.ogAlt': 'Mythos: write the whole series in one place, with a preview of a continuity check flagging a character who died in Book One.',
+  'a11y.skip': 'Skip to content', 'a11y.lang': 'Language', 'a11y.langChanged': 'Language changed to English',
+  'a11y.themeToLight': 'Switch to light theme', 'a11y.themeToDark': 'Switch to dark theme',
+  'nav.waitlist': 'Waitlist',
+  'hero.status': 'Early development', 'hero.statusNote': 'Version 0, not released yet.',
+  'demo.soon': 'Coming soon',
+  'wait.label': 'Email address', 'wait.placeholder': 'you@example.com', 'wait.submit': 'Join the waitlist', 'wait.submitting': 'Joining…',
+  'wait.consent': 'By joining, you agree to get the release announcement and important project news at this address.',
+  'wait.invalid': 'Enter a valid email address.',
+  'wait.success': "You're on the list. We'll write when Mythos is ready to install.",
+  'wait.duplicate': "You're already on the list. Nothing more to do.",
+  'wait.error': "We couldn't add you just now. Please try again later, or write to <a href=\"mailto:support@mythoside.com\">support@mythoside.com</a>.",
+  'wait.privacy': 'We store only your email address and chosen language. They are used only to announce the release and important project news, and are shared with no third party. To have them deleted, write to <a href="mailto:support@mythoside.com">support@mythoside.com</a>.',
+  'graph.kind.series': 'Series', 'graph.kind.book': 'Book', 'graph.linkedTo': 'linked to', 'graph.deceased': 'deceased', 'graph.flagged': 'flagged: mentioned after death',
+  'open.platforms': 'Mythos launches on Windows and Linux first, with macOS after. The price will be announced at launch, and people on the waitlist hear first.',
   'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Checks', 'nav.ethos': 'Your files', 'nav.open': 'Pricing', 'nav.star': 'Star on GitHub',
   'hero.eyebrow': 'A world development environment for novelists',
   'hero.h1': 'Write the whole series in one place',
@@ -59,6 +78,23 @@ export const EN = {
 export type MessageKey = keyof typeof EN
 
 export const TR: Record<MessageKey, string> = {
+  'meta.title': 'Mythos, romancılar için bir dünya geliştirme ortamı',
+  'meta.description': 'Mythos, uzun kurgu için bir masaüstü uygulaması. Bölümler, karakterler, mekânlar ve zaman çizelgesi kendi diskinde, yan yana düz Markdown dosyaları olarak durur.',
+  'meta.ogAlt': 'Mythos: bütün seriyi tek bir yerde yaz. Birinci Kitap’ta ölen bir karakteri işaretleyen süreklilik kontrolü önizlemesi.',
+  'a11y.skip': 'İçeriğe geç', 'a11y.lang': 'Dil', 'a11y.langChanged': 'Dil Türkçe olarak değiştirildi',
+  'a11y.themeToLight': 'Açık temaya geç', 'a11y.themeToDark': 'Koyu temaya geç',
+  'nav.waitlist': 'Bekleme listesi',
+  'hero.status': 'Erken geliştirme', 'hero.statusNote': 'Sürüm 0, henüz yayımlanmadı.',
+  'demo.soon': 'Yakında',
+  'wait.label': 'E-posta adresi', 'wait.placeholder': 'sen@ornek.com', 'wait.submit': 'Bekleme listesine katıl', 'wait.submitting': 'Katılıyor…',
+  'wait.consent': 'Katılarak, sürüm duyurusunu ve önemli proje haberlerini bu adrese almayı kabul etmiş olursun.',
+  'wait.invalid': 'Geçerli bir e-posta adresi gir.',
+  'wait.success': 'Listedesin. Mythos kuruluma hazır olduğunda sana yazacağız.',
+  'wait.duplicate': 'Zaten listedesin. Başka bir şey yapman gerekmiyor.',
+  'wait.error': 'Seni şu anda ekleyemedik. Lütfen biraz sonra yeniden dene ya da <a href=\"mailto:support@mythoside.com\">support@mythoside.com</a> adresine yaz.',
+  'wait.privacy': 'Yalnızca e-posta adresini ve seçtiğin dili saklıyoruz. Bunlar yalnızca sürümü ve önemli proje haberlerini duyurmak için kullanılır, hiçbir üçüncü tarafla paylaşılmaz. Silinmesi için <a href="mailto:support@mythoside.com">support@mythoside.com</a> adresine yaz.',
+  'graph.kind.series': 'Seri', 'graph.kind.book': 'Kitap', 'graph.linkedTo': 'bağlantılı', 'graph.deceased': 'ölü', 'graph.flagged': 'işaretli: ölümden sonra anılıyor',
+  'open.platforms': 'Mythos önce Windows ve Linux için çıkacak, macOS sonra gelecek. Fiyat çıkış sırasında açıklanacak; bekleme listesindekiler ilk duyanlar olacak.',
   'nav.problem': 'Problem', 'nav.model': 'Model', 'nav.engine': 'Kontroller', 'nav.ethos': 'Dosyaların', 'nav.open': 'Fiyat', 'nav.star': "GitHub'da Yıldızla",
   'hero.eyebrow': 'Romancılar için bir dünya geliştirme ortamı',
   'hero.h1': 'Bütün seriyi tek bir yerde yaz',
@@ -114,3 +150,4 @@ export const TR: Record<MessageKey, string> = {
   'foot.motto': 'Dünya, doğruluğun kaynağıdır.',
 }
 
+export const MESSAGES: Record<Lang, Record<MessageKey, string>> = { [Lang.En]: EN, [Lang.Tr]: TR }

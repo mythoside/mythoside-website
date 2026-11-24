@@ -20,10 +20,10 @@ export interface GraphEdge {
   bad?: boolean
 }
 
-type Seed = Omit<GraphNode, 'x' | 'y' | 'vx' | 'vy'>
+export type Seed = Omit<GraphNode, 'x' | 'y' | 'vx' | 'vy'>
 
 // The worked example from the hero: Corvath dies in Book One, ch. 12, and is referenced again in Book Two, ch. 3.
-const SEEDS: Seed[] = [
+export const SEEDS: readonly Seed[] = [
   { id: 'series', label: 'The Ashfall Cycle', kind: NodeKind.Series },
   { id: 'b1', label: 'Embergate', kind: NodeKind.Book },
   { id: 'b2', label: 'The Drowned Throne', kind: NodeKind.Book },

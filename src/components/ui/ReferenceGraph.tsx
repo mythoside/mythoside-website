@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import { NodeKind } from '@/enums'
 import { useLang } from '@/i18n/LangProvider'
 import { EDGES, createNodes, fitView, neighbours, radiusOf, step } from './graphSim'
 import type { GraphNode } from './graphSim'
+import { GraphTextAlt } from './GraphTextAlt'
 
 interface View { x: number; y: number; k: number }
 interface Size { w: number; h: number }
@@ -82,6 +83,7 @@ function drawGraph(ctx: CanvasRenderingContext2D, nodes: GraphNode[], view: View
 export default function ReferenceGraph() {
   const { t } = useLang()
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const altId = useId()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -250,5 +252,10 @@ export default function ReferenceGraph() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="graph-canvas" role="img" aria-label={t('graph.aria')} />
+  return (
+    <>
+      <canvas ref={canvasRef} className="graph-canvas" role="img" aria-label={t('graph.aria')} aria-describedby={altId} />
+      <GraphTextAlt id={altId} />
+    </>
+  )
 }

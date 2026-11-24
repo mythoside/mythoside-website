@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public waitlist: anyone may add one entry per email, and nobody can read, list, change or delete it.
+    match /waitlist/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['email', 'lang', 'createdAt', 'consent'])
+        && request.resource.data.keys().hasAll(['email', 'lang', 'createdAt', 'consent'])
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 254
+        && request.resource.data.email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$')
+        && id == request.resource.data.email
+        && request.resource.data.lang in ['en', 'tr']
+        && request.resource.data.consent == true
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.createdAt > request.time - duration.value(5, 'm')
+        && request.resource.data.createdAt < request.time + duration.value(5, 'm');
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

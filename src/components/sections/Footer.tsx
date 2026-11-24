@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
           {COLUMNS.map(({ title, links }) => (
             <div className="foot-col" key={title}>
-              <T k={title} as="h4" />
+              <T k={title} as="h2" />
               {links.map(({ href, label, text }) => (
                 <a href={href} key={href}>{label ? <T k={label} /> : text}</a>
               ))}

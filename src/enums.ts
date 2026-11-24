@@ -41,6 +41,7 @@ export enum SectionId {
   Engine = 'engine',
   Ethos = 'ethos',
   Open = 'open',
+  Waitlist = 'waitlist',
 }
 
 export enum RuleSeverity {
@@ -54,4 +55,14 @@ export enum TreeRowKind {
   Folder = 'folder',
   File = 'file',
   ActiveFile = 'active-file',
+}
+
+// States of the waitlist form.
+export enum WaitlistStatus {
+  Idle = 'idle',
+  Submitting = 'submitting',
+  Success = 'success',
+  Duplicate = 'duplicate',
+  Invalid = 'invalid',
+  Error = 'error',
 }

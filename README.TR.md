@@ -36,15 +36,15 @@ npm run lint
 ## Klasör yapısı
 
 ```text
-app/layout.tsx            yazı tipleri, meta veriler, tema ve dil sağlayıcıları
-app/page.tsx              sayfa, bölüm bölüm
+app/(en)/, app/tr/       / ve /tr için kök layout ve sayfalar (her biri kendi <html lang> değerini taşır)
+firestore.rules           bekleme listesi kuralları: yalnızca oluşturma, doğrulamalı
 app/globals.css           tasarım token'ları, açık ve koyu tema
 src/enums.ts              kapalı seçenek kümeleri: Lang, Theme, ButtonVariant, IconName, NodeKind, SectionId, RuleSeverity, TreeRowKind
 src/i18n/                 sitedeki bütün metinler, İngilizce ve Türkçe; sağlayıcı ve geçiş düğmesi
 src/theme/                tema sağlayıcısı ve geçiş düğmesi
 src/components/sections/  Navbar, Hero, Problem, HowItWorks, Features, Philosophy, OpenSource, FinalCTA, Footer
 src/components/ui/        Logo, Icon, ReferenceGraph (canvas kuvvet grafiği), Button, Card, FadeIn, SectionShell
-public/                   favicon ve logo dosyaları
+public/                   favicon, paylaşım görseli (og.png), robots.txt, sitemap.xml ve logo dosyaları
 ```
 
 Metni değiştirmek için `src/i18n/messages.ts` dosyasını düzenle; İngilizce ve Türkçe girdileri birlikte güncelle.
